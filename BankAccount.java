@@ -4,4 +4,17 @@ public class BankAccount {
     private int pin;
     private double balance;
 
+   // main constructor
+public BankAccount(String accountHolder, int accountNumber, int pin, double balance) {
+    this.accountHolder = accountHolder;
+    this.accountNumber = accountNumber;
+    this.pin = pin;
+    this.balance = balance;
+}
+
+// helper constructor
+public BankAccount(String accountHolder, int accountNumber, int pin) {
+    this(accountHolder, accountNumber, pin, 0.0);
+}
+
 }
