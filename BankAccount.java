@@ -4,18 +4,20 @@ public class BankAccount {
     private int pin;
     private double balance;
 
-   // main constructor
+    // main constructor
     public BankAccount(String accountHolder, int accountNumber, int pin, double balance) {
-    this.accountHolder = accountHolder;
-    this.accountNumber = accountNumber;
-    this.pin = pin;
-    this.balance = balance;}
+        this.accountHolder = accountHolder;
+        this.accountNumber = accountNumber;
+        this.pin = pin;
+        this.balance = balance;
+    }
 
     // helper constructor
     public BankAccount(String accountHolder, int accountNumber, int pin) {
-    this(accountHolder, accountNumber, pin, 0.0);}
+        this(accountHolder, accountNumber, pin, 0.0);
+    }
 
-    //getters
+    // getters
     public String getAccountHolder() {
         return accountHolder;
     }
@@ -32,7 +34,7 @@ public class BankAccount {
         return this.pin == enteredPin;
     }
 
-    //DEPOSIT METHOD
+    // DEPOSIT METHOD
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -40,11 +42,12 @@ public class BankAccount {
             System.out.println("New balance: €" + balance);
         } else {
             System.out.println("Unable to deposit.");
-        }}
+        }
+    }
 
-    //WITHDRAW METHOD
+    // WITHDRAW METHOD
     public void withdraw(double amount) {
-        if (amount < 0){
+        if (amount < 0) {
             System.out.println("Invalid number entered.");
         } else if (amount > balance) {
             System.out.println("Funds unavailable.");
@@ -52,6 +55,15 @@ public class BankAccount {
             balance -= amount;
             System.out.println("Withdrawal successful.");
             System.out.println("New balance: €" + balance);
-        }}
+        }
+    }
+
+    // DISPLAY ACCOUNT INFO
+    public void displayAccountInfo() {
+        System.out.println("\n--- Account Details ---");
+        System.out.println("Account Holder: " + accountHolder);
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Balance: " + balance);
+    }
 
 }
