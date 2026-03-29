@@ -32,4 +32,26 @@ public class BankAccount {
         return this.pin == enteredPin;
     }
 
+    //DEPOSIT METHOD
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposit successful.");
+            System.out.println("New balance: €" + balance);
+        } else {
+            System.out.println("Unable to deposit.");
+        }}
+
+    //WITHDRAW METHOD
+    public void withdraw(double amount) {
+        if (amount < 0){
+            System.out.println("Invalid number entered.");
+        } else if (amount > balance) {
+            System.out.println("Funds unavailable.");
+        } else {
+            balance -= amount;
+            System.out.println("Withdrawal successful.");
+            System.out.println("New balance: €" + balance);
+        }}
+
 }
