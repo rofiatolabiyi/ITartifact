@@ -41,7 +41,7 @@ public class BankAccount {
             System.out.println("Deposit successful.");
             System.out.println("New balance: €" + balance);
         } else {
-            System.out.println("Unable to deposit.");
+            System.out.println("Invalid number entered.");
         }
     }
 
@@ -64,6 +64,20 @@ public class BankAccount {
         System.out.println("Account Holder: " + accountHolder);
         System.out.println("Account Number: " + accountNumber);
         System.out.println("Balance: " + balance);
+    }
+
+    // TRANSFER METHOD
+    public void transfer(BankAccount receiver, double amount) {
+        if (amount <= 0) {
+            System.out.println("Invalid number entered.");
+        } else if (amount > balance) {
+            System.out.println("Funds unavailable.");
+        } else {
+            balance -= amount;
+            receiver.balance += amount;
+            System.out.println("Transfer successful.");
+            System.out.println("New balance: " + balance);
+        }
     }
 
 }
