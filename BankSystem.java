@@ -100,13 +100,13 @@ public class BankSystem {
             System.out.println("No accounts exist. Create one first.");
             return;
         }
-
+        //read in acc number and pin
         System.out.print("Enter account number: ");
         int accNo = scanner.nextInt();
 
         System.out.print("Enter PIN: ");
         int pin = scanner.nextInt();
-
+        //object created
         BankAccount account = findAccount(accNo);
 
         if (account != null && account.checkPin(pin)) {
@@ -125,5 +125,22 @@ public class BankSystem {
             }
         }
         return null;
+    }
+
+    // ACCOUNT MENU METHOD
+    private void showAccountMenu(BankAccount account) {
+        int choice;
+
+        do {
+            System.out.println("\n=== ACCOUNT MENU ===");
+            System.out.println("1. Deposit");
+            System.out.println("2. Withdraw");
+            System.out.println("3. Check Balance");
+            System.out.println("4. View Account Info");
+            System.out.println("5. Transfer Money");
+            System.out.println("6. Logout");
+            System.out.print("Choose an option: ");
+            choice = scanner.nextInt();
+        }
     }
 }
