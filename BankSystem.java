@@ -174,4 +174,20 @@ public class BankSystem {
 
         } while (choice != 6);
     }
+
+    // HANDLE DEPOSIT
+    private void handleDeposit(BankAccount account) {
+        double amount;
+
+        do {
+            System.out.print("Enter deposit amount: ");
+            amount = scanner.nextDouble();
+
+            if (amount <= 0) {
+                System.out.println("Invalid number entered. Try again.");
+            }
+        } while (amount <= 0);
+        account.deposit(amount);
+
+    }
 }
