@@ -188,6 +188,24 @@ public class BankSystem {
             }
         } while (amount <= 0);
         account.deposit(amount);
-
     }
+
+    // HANDLE WITHDRAW METHOD
+    private void handleWithdraw(BankAccount account) {
+        double amount;
+
+        do {
+            System.out.print("Enter withdrawal amount: ");
+            amount = scanner.nextDouble();
+
+            if (amount <= 0) {
+                System.out.println("Invalid number entered. Try again.");
+            } else if (amount > account.getBalance()) {
+                System.out.println("Funds unavailable. Try again.");
+            }
+        } while (amount <= 0 || amount > account.getBalance());
+        account.withdraw(amount);
+    }
+
+    
 }
