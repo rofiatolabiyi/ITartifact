@@ -1,0 +1,23 @@
+# Compiled Java files
+*.class
+
+# Logs
+*.log
+
+# Mac system files
+.DS_Store
+
+# IDE files
+.idea/
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IntelliJ
+*.iml
+
+# Temporary files
+*.tmp
