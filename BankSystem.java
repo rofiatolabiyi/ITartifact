@@ -141,6 +141,37 @@ public class BankSystem {
             System.out.println("6. Logout");
             System.out.print("Choose an option: ");
             choice = scanner.nextInt();
-        }
+
+            //switch statement handles choices
+            switch (choice) {
+                case 1:
+                    handleDeposit(account);
+                    break;
+
+                case 2:
+                    handleWithdraw(account);
+                    break;
+
+                case 3:
+                    System.out.println("Current Balance: €" + account.getBalance());
+                    break;
+
+                case 4:
+                    account.displayAccountInfo();
+                    break;
+
+                case 5:
+                    transferMoney(account);
+                    break;
+
+                case 6:
+                    System.out.println("Logged out successfully.");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+            }
+
+        } while (choice != 6);
     }
 }
