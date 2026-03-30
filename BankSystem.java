@@ -75,7 +75,7 @@ public class BankSystem {
             System.out.print("Enter account number: ");
             accNo = scanner.nextInt();
 
-            //if acc number already exists, try again
+            //if acc number already exists try again
             if (findAccount(accNo) != null) {
                 System.out.println("Account number already exists. Try again.");}
 
@@ -93,6 +93,30 @@ public class BankSystem {
             System.out.println("Account created successfully.");
         }
     }
+
+    // LOGIN METHOD
+    private void login() {
+        if (accounts.isEmpty()) {
+            System.out.println("No accounts exist. Create one first.");
+            return;
+        }
+
+        System.out.print("Enter account number: ");
+        int accNo = scanner.nextInt();
+
+        System.out.print("Enter PIN: ");
+        int pin = scanner.nextInt();
+
+        BankAccount account = findAccount(accNo);
+
+        if (account != null && account.checkPin(pin)) {
+            System.out.println("Login successful. Welcome " + account.getAccountHolder());
+            showAccountMenu(account);
+        } else {
+            System.out.println("Invalid account number or PIN.");
+        }
+    }
+
      // FIND ACCOUNT
     private BankAccount findAccount(int accNo) {
         for (BankAccount acc : accounts) {
