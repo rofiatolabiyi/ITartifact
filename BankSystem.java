@@ -117,7 +117,7 @@ public class BankSystem {
         }
     }
 
-     // FIND ACCOUNT
+     // FIND ACCOUNT METHOD
     private BankAccount findAccount(int accNo) {
         for (BankAccount acc : accounts) {
             if (acc.getAccountNumber() == accNo) {
@@ -207,5 +207,35 @@ public class BankSystem {
         account.withdraw(amount);
     }
 
-    
+    // TRANSFER MONEY METHOD
+    private void transferMoney(BankAccount sender) {
+        System.out.print("Enter recipient account number: ");
+        int recipientAccNo = scanner.nextInt();
+
+        BankAccount recipient = findAccount(recipientAccNo);
+
+        if (recipient == null) {
+            System.out.println("Receiver account not found.");
+            return;
+        }
+
+        if(recipient.getAccountNumber() == sender.getAccountNumber()){
+            System.out.println("Cannot transfer to the same account.");
+            return;
+        }
+        double amount;
+
+        do {
+            System.out.print("Enter transfer amount: ");
+            amount = scanner.nextDouble();
+
+            if (amount <= 0) {
+                System.out.println("Invalid number entered. Try again.");
+            } else if (amount > sender.getBalance()) {
+                System.out.println("Funds unavailable. Try again.");
+            }
+        } while (amount <= 0 || amount > sender.getBalance());
+
+        sender.transfer(recipient, amount);
+    }
 }
