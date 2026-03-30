@@ -65,34 +65,34 @@ public class BankSystem {
 
     // CREATE ACCOUNT METHOD
     private void createAccount() {
-        scanner.nextLine(); // clear buffer
+    scanner.nextLine(); // clear buffer
 
-        System.out.print("Enter account holder name: ");
-        String name = scanner.nextLine();
+    System.out.print("Enter account holder name: ");
+    String name = scanner.nextLine();
 
-        int accNo;
-        while (true) {
-            System.out.print("Enter account number: ");
-            accNo = scanner.nextInt();
+    int accNo;
+    while (true) {
+        System.out.print("Enter account number: ");
+        accNo = scanner.nextInt();
 
-            //if acc number already exists try again
-            if (findAccount(accNo) != null) {
-                System.out.println("Account number already exists. Try again.");}
-
-            else{break;}
-
-            System.out.print("Set 4-digit PIN: ");
-            int pin = scanner.nextInt();
-
-            System.out.print("Enter initial balance: ");
-            double balance = scanner.nextDouble();
-
-            BankAccount newAccount = new BankAccount(name, accNo, pin, balance);
-            accounts.add(newAccount);
-
-            System.out.println("Account created successfully.");
+        if (findAccount(accNo) != null) {
+            System.out.println("Account number already exists. Try again.");
+        } else {
+            break;
         }
     }
+
+    System.out.print("Set 4-digit PIN: ");
+    int pin = scanner.nextInt();
+
+    System.out.print("Enter initial balance: ");
+    double balance = scanner.nextDouble();
+
+    BankAccount newAccount = new BankAccount(name, accNo, pin, balance);
+    accounts.add(newAccount);
+
+    System.out.println("Account created successfully.");
+}
 
     // LOGIN METHOD
     private void login() {
