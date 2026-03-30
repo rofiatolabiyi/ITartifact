@@ -45,22 +45,61 @@ public class BankSystem {
         } while (choice != 3);
     }
 
-    // CREATE ACCOUNT METHOD
+    // CREATE MULTIPLE ACCOUNT METHOD
     private void createMultipleAccounts() {
         System.out.println("How many accounts would you like to create?");
         int count = scanner.nextInt();
         scanner.nextLine(); // buffer
 
         // if number isnt valid
-        if(count<=0){
+        if (count <= 0) {
             System.out.println("Invalid number of accounts.");
             return;
         }
 
         for (int i = 0; i < count; i++) {
             System.out.println("Creating account " + (i + 1) + ":");
-           createAccount();
+            createAccount();
         }
     }
 
+    // CREATE ACCOUNT METHOD
+    private void createAccount() {
+        scanner.nextLine(); // clear buffer
+
+        System.out.print("Enter account holder name: ");
+        String name = scanner.nextLine();
+
+        int accNo;
+        while (true) {
+            System.out.print("Enter account number: ");
+            accNo = scanner.nextInt();
+
+            //if acc number already exists, try again
+            if (findAccount(accNo) != null) {
+                System.out.println("Account number already exists. Try again.");}
+
+            else{break;}
+
+            System.out.print("Set 4-digit PIN: ");
+            int pin = scanner.nextInt();
+
+            System.out.print("Enter initial balance: ");
+            double balance = scanner.nextDouble();
+
+            BankAccount newAccount = new BankAccount(name, accNo, pin, balance);
+            accounts.add(newAccount);
+
+            System.out.println("Account created successfully.");
+        }
+    }
+     // FIND ACCOUNT
+    private BankAccount findAccount(int accNo) {
+        for (BankAccount acc : accounts) {
+            if (acc.getAccountNumber() == accNo) {
+                return acc;
+            }
+        }
+        return null;
+    }
 }
