@@ -1,55 +1,56 @@
-PROJECT DESCRIPTION
-A banking system in the language java. 
-It allows user to choose how many accounts they would like to create and withdraw and lodge into the account as well as transfer money through accounts created.
+# Banking System — Java
 
-USER CAN
-create one or more accounts.
-login to the accounts using an account number and pin.
-deposit and withdraw.
-print account balance.
-transfer between accounts.
-view account details.
+A console-based banking application developed in Java that allows users to create and manage multiple bank accounts and perform basic financial transactions.
 
-TECHNOLOGIES USED
-1. java
-2. arraylists
-3. scanner
-4. loops, methods and constructors
+## Features
 
-SETUP INSTRUCTIONS
-download or clone the repo.
-open the project in a java ide.
-compile all .java files.
-run main.java.
+- Create and manage multiple bank accounts
+- Log in using an account number and PIN
+- Deposit and withdraw money
+- Transfer money between accounts
+- Check account balances
+- View account details
+- Handle invalid menu selections and user inputs
 
-USAGE  
-<img width="349" height="352" alt="image_2026-03-30_192741037" src="https://github.com/user-attachments/assets/01854387-ee17-4b76-a751-fe8a73f19328" />
+## Technologies Used
 
-1. run the program.
-2. press enter to get passed the buffer.
-3. press 1 to create an account or multiple.
-4. when prompted for the amount of accounts wanted enter the number of accounts you want.
-5. enter the account holders name, account number, pin and starting balance.
-6. select login
-7. enter account number and pin
- 
-   <img width="256" height="196" alt="image_2026-03-30_192833246" src="https://github.com/user-attachments/assets/1809b80b-6b01-40c1-9b75-6762f36a460c" />
-8. use the menu to
-   deposit
-   withdraw
-   transfer moneu
-   check balance
-9. logout or exit
+- Java
+- ArrayList for storing accounts
+- Scanner for user input
+- Loops, methods, and constructors
 
-FEATURES
-multiple account system
-pin based login
-alerts users of invalid inputs
-transfer across accounts
-dynamic storage in arraylist
+## Getting Started
 
-AI ACKNOWLEDGEMENT
-chatgpt was used to help debug issues in loops and input handling (my switcg statements and helped with placing buffers)
-improve the validation logic (print out when invalid option is provided)
-and help design the class structure
+### Prerequisites
 
+- Java Development Kit (JDK)
+- A terminal or Java IDE
+
+### Installation
+
+1. Clone the repository:
+
+   `git clone https://github.com/rofiatolabiyi/ITartifact.git`
+
+2. Open the project folder.
+3. Compile the Java files:
+
+   `javac *.java`
+
+4. Run the application:
+
+   `java Main`
+
+## How to Use
+
+1. Start the application.
+2. Follow the initial prompt to continue.
+3. Choose the option to create one or more accounts.
+4. Enter the account holder's name, account number, PIN, and starting balance.
+5. Log in using your account number and PIN.
+6. Use the menu to deposit, withdraw, transfer funds, or check your balance.
+7. Log out or exit when finished.
+
+## What I Learned
+
+This project helped me practise Java programming concepts, including working with classes, constructors, ArrayLists, user input, and menu-driven applications.
